@@ -28,6 +28,8 @@ class superb extends thesis_skin {
 
     protected function construct() {
 
+        add_action('wp_enqueue_scripts', array($this, 'add_enqueue'));
+
         // implement display options that do not follow the normal pattern
         if (!empty($this->display['misc']['display']['braces'])) {
             add_filter('thesis_post_num_comments', array($this, 'num_comments'));
@@ -39,6 +41,16 @@ class superb extends thesis_skin {
 
         // hook header image into the proper location for this Skin
         add_action('hook_bottom_header', array($this, 'header_image'));
+
+    }
+
+    // Custom Functions
+
+    function add_enqueue() {
+
+        wp_enqueue_style('materialize', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css');
+        wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js');
+        wp_enqueue_script('materialize', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js', 'jquery', true);
 
     }
 
