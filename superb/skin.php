@@ -7,4 +7,7 @@ Version: 0.1
 Class: superb
 */
 class superb extends thesis_skin {
+
+    // All the juice will go here
+
 }
