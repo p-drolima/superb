@@ -13,26 +13,33 @@ class superb extends thesis_skin {
 	— (documentation link needed)
 	*/
     public $functionality = array(
+
         'css_preprocessor' => 'scss',
         'editor_grt' => true,
         'fonts_google' => true,
         'header_image' => true
+
     );
 
     /*
     Skin API pseudo-constructor; place hooks, filters, and other initializations here.
     — http://diythemes.com/thesis/rtfm/api/skin/#section-construct
     */
+
     protected function construct() {
+
         // implement display options that do not follow the normal pattern
         if (!empty($this->display['misc']['display']['braces'])) {
             add_filter('thesis_post_num_comments', array($this, 'num_comments'));
             add_filter('thesis_comments_intro', array($this, 'comments_intro'));
         }
+
         // the previous/next links (found on home, archive, and single templates) require special filtering based on page context
         add_filter('thesis_html_container_prev_next_show', array($this, 'prev_next'));
+
         // hook header image into the proper location for this Skin
         add_action('hook_bottom_header', array($this, 'header_image'));
+
     }
 
     /*---:[ Implement non-standard display options ]:---*/
@@ -41,16 +48,22 @@ class superb extends thesis_skin {
     The following is a special filter to prevent the prev/next container from showing if the query only has 1 page of results.
     */
     public function prev_next() {
+
         global $wp_query;
         return (($wp_query->is_home || $wp_query->is_archive || $wp_query->is_search) && $wp_query->max_num_pages > 1) || ($wp_query->is_single && !empty($this->display['misc']['display']['prev_next'])) ? true : false;
+
     }
 
     public function num_comments($content) {
+
         return "<span class=\"bracket\">{</span> $content <span class=\"bracket\">}</span>";
+
     }
 
     public function comments_intro($text) {
+
         return "<span class=\"bracket\">{</span> $text <span class=\"bracket\">}</span>";
+
     }
 
     /*---:[ Implement a user-added Header Image ]:---*/
@@ -60,7 +73,9 @@ class superb extends thesis_skin {
     — (documentation link needed)
     */
     public function header_image() {
+
         $this->header_image->html();
+
     }
 
     /*
@@ -69,6 +84,7 @@ class superb extends thesis_skin {
     — http://diythemes.com/thesis/rtfm/api/skin/#section-filter-css
     */
     public function filter_css($css) {
+
         return $css. (!empty($this->header_image->image) ?
             "\n#header {\n".
             "\tpadding: 0;\n".
@@ -76,6 +92,7 @@ class superb extends thesis_skin {
             "#header #site_title a, #header #site_tagline {\n".
             "\tdisplay: none;\n".
             "}\n" : '');
+
     }
 
     /*---:[ Skin Display Options ]:---*/
