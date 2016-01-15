@@ -29,6 +29,7 @@ class superb extends thesis_skin {
     protected function construct() {
 
         add_action('wp_enqueue_scripts', array($this, 'add_enqueue'));
+        add_action('hook_top_comment_form_2', array($this, 'add_comment_form_2'));
 
         // implement display options that do not follow the normal pattern
         if (!empty($this->display['misc']['display']['braces'])) {
@@ -49,10 +50,28 @@ class superb extends thesis_skin {
     function add_enqueue() {
 
         wp_enqueue_style('materialize', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css');
+        wp_enqueue_style('material-icons', 'https://fonts.googleapis.com/icon?family=Material+Icons');
         wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js');
         wp_enqueue_script('materialize', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js', 'jquery', true);
 
     }
+
+    // Custom Comment Form - Materialize
+
+    function add_comment_form_2() { ?>
+
+        <p id="comment_form_comment">
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea name="comment" id="comment" class="materialize-textarea input_text" length="120"></textarea>
+                    <label for="comment">Feel free to comment</label>
+                </div>
+            </div>
+        </p>
+
+        <button class="btn waves-effect waves-light" type="submit" name="submit">Submit<i class="material-icons right">send</i></button>
+
+    <?php }
 
     /*---:[ Implement non-standard display options ]:---*/
 
