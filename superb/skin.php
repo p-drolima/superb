@@ -31,6 +31,8 @@ class superb extends thesis_skin {
         add_action('wp_enqueue_scripts', array($this, 'add_enqueue'));
         add_action('hook_top_comment_form_2', array($this, 'add_comment_form_2'));
 
+        add_filter('thesis_site_title', array($this, 'add_site_title'));
+
         // implement display options that do not follow the normal pattern
         if (!empty($this->display['misc']['display']['braces'])) {
             add_filter('thesis_post_num_comments', array($this, 'num_comments'));
@@ -46,6 +48,12 @@ class superb extends thesis_skin {
     }
 
     // Custom Functions
+
+    function add_site_title() {
+
+        echo "<h1 class='site-tile'>Pedro Lima<span> Web Development</span></h1>";
+
+    }
 
     function add_enqueue() {
 
