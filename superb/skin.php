@@ -31,6 +31,7 @@ class superb extends thesis_skin {
         add_action('wp_enqueue_scripts', array($this, 'add_enqueue'));
         add_action('hook_top_comment_form_2', array($this, 'add_comment_form_2'));
 
+
         add_filter('thesis_site_title', array($this, 'add_site_title'));
 
         // implement display options that do not follow the normal pattern
@@ -61,6 +62,8 @@ class superb extends thesis_skin {
         wp_enqueue_style('material-icons', 'https://fonts.googleapis.com/icon?family=Material+Icons');
         wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js');
         wp_enqueue_script('materialize', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js', 'jquery', true);
+        wp_enqueue_script('resize', '/wp-content/thesis/skins/superb/js/resize.js', 'jquery', false);
+        wp_enqueue_script('custom', '/wp-content/thesis/skins/superb/js/custom.js', 'jquery', false);
 
     }
 
@@ -80,6 +83,7 @@ class superb extends thesis_skin {
         <button class="btn waves-effect waves-light" type="submit" name="submit">Submit<i class="material-icons right">send</i></button>
 
     <?php }
+
 
     /*---:[ Implement non-standard display options ]:---*/
 
