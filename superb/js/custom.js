@@ -1,5 +1,5 @@
 jQuery( document ).ready(function() {
-    jQuery('#main-hero').resizeToParent({parent: '#full-background'});
+    jQuery('.full-image').resizeToParent({parent: '#full-background'});
 });
 jQuery( window ).ready(function() {
 
@@ -48,5 +48,13 @@ jQuery(document).ready(function(){
         }
 
     });
+
+});
+
+jQuery(window).load(function() {
+
+    /*jQuery("#status").fadeOut("slow");*/
+
+    jQuery("#loader").delay(1).fadeOut();
 
 });
