@@ -95,7 +95,7 @@ button {
 .grt {
   width: 747px;
   margin: 0 auto;
-  font-family: ThompsonModernLight-Regular;
+  font-family: Georgia, "Times New Roman", Times, serif;
   -webkit-font-smoothing: subpixel-antialiased !important; }
 
 /*
@@ -121,7 +121,7 @@ button {
 
 .grt h2 {
   font-size: 20px;
-  line-height: 34px;
+  line-height: 33px;
   margin-top: 39px;
   margin-bottom: 13px; }
 
@@ -286,7 +286,7 @@ button {
 .grt blockquote.right,
 .grt blockquote.left {
   font-size: 26px;
-  line-height: 38px;
+  line-height: 37px;
   width: 45%;
   margin-bottom: 13px; }
 
