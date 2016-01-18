@@ -145,9 +145,7 @@ p a:hover {
 .menu {
   position: relative;
   z-index: 50;
-  list-style: none;
-  border-width: 0 0 1px 1px;
-  border-style: solid; }
+  list-style: none; }
 
 .menu li {
   position: relative;
@@ -177,18 +175,19 @@ p a:hover {
 .menu a,
 .menu_control {
   display: block;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 19px;
-  text-transform: uppercase;
   letter-spacing: 1px;
-  color: #111111;
-  border-width: 1px 1px 1px 0;
+  color: white;
+  border-width: 0;
   border-style: solid;
-  background-color: #eeeeee;
-  padding: 0.5em 1em; }
+  background-color: transparent;
+  padding: 0.5em 1em;
+  font-family: 'ThompsonModern-Regular'; }
 
 .menu a:hover {
-  background-color: #dddddd; }
+  background-color: transparent;
+  color: #dddddd; }
 
 .menu_control {
   display: none;
@@ -200,11 +199,10 @@ p a:hover {
 .menu,
 .menu a,
 .menu .sub-menu {
-  border-color: #dddddd; }
+  float: right; }
 
 .menu .current-menu-item > a {
-  border-bottom-color: white;
-  background-color: white;
+  background-color: transparent;
   cursor: text; }
 
 .menu .sub-menu .current-menu-item > a {
@@ -1071,8 +1069,7 @@ body.landing {
   font-family: ThompsonModernSemiBold-Regular;
   position: absolute;
   z-index: 9;
-  margin: 0;
-  left: 200px; }
+  margin: 0; }
 
 .site-tile span {
   color: #3d82cf;
@@ -1158,9 +1155,10 @@ body.landing {
 
 .logo-nav {
   position: fixed;
-  top: 0;
+  top: 33px;
   z-index: 99;
-  width: 100%; }
+  width: 100%;
+  background-color: white !important; }
 
 #loader {
   position: absolute;
