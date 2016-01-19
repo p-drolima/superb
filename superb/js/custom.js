@@ -49,11 +49,27 @@ jQuery(document).ready(function(){
 
     });
 
+    jQuery(window).scroll(function() {
+        var headerH = jQuery('#full-background').height();
+        var lessH = headerH - 68;
+        var evenlessH = headerH - 300;
+        if (jQuery(this).scrollTop() > lessH) {
+            jQuery( ".logo-nav .background" ).fadeIn();
+        }
+        else {
+            jQuery( ".logo-nav .background" ).fadeOut();
+        }
+        if(jQuery(this).scrollTop() > evenlessH ) {
+            jQuery('.menu a').css('color', '#000').css('transition', 'color 2s ease');
+        }
+        else {
+            jQuery('.menu a').css('color', '#fff').css('transition', 'color 2s ease');
+        }
+    });
+
 });
 
 jQuery(window).load(function() {
-
-    /*jQuery("#status").fadeOut("slow");*/
 
     jQuery("#loader").delay(1).fadeOut();
 

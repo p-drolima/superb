@@ -1069,7 +1069,8 @@ body.landing {
   font-family: ThompsonModernSemiBold-Regular;
   position: absolute;
   z-index: 9;
-  margin: 0; }
+  margin: 0;
+  display: block; }
 
 .site-tile span {
   color: #3d82cf;
@@ -1157,8 +1158,15 @@ body.landing {
   position: fixed;
   top: 33px;
   z-index: 99;
+  width: 100%; }
+
+.logo-nav .background {
+  background-color: white;
+  display: none;
+  height: 34px;
   width: 100%;
-  background-color: white !important; }
+  position: absolute;
+  border-bottom: 2px solid #aaaaaa; }
 
 #loader {
   position: absolute;
